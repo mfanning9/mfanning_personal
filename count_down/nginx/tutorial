@@ -1,0 +1,34 @@
+server {
+    listen 8080;
+    server_name mycountdown.local;
+
+    root /var/www/tutorial;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location /cruise {
+        root /var/www/tutorial;
+        index cruise.html;
+        try_files $uri /cruise.html;
+    }
+
+    location /seminar {
+        root /var/www/tutorial;
+        index seminar.html;
+        try_files $uri /seminar.html;
+    }
+
+    location /leaving {
+        root /var/www/tutorial;
+        index leaving.html;
+        try_files $uri /leaving.html;
+    }
+     location /friday {
+        root /var/www/tutorial;
+        index friday.html;
+        try_files $uri /friday.html;
+    }
+}

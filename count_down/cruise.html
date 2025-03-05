@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown to Cruise</title>
+    <style>
+        body {
+            font-family: monospace;
+            text-align: center;
+            background-color: #002b36;
+            color: #ffffff;
+            padding: 20px;
+        }
+        pre {
+            font-size: 14px;
+            line-height: 1.2;
+            white-space: pre-wrap;
+        }
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Countdown to the Cruise!</h1>
+    <div class="countdown" id="countdown"></div>
+
+    <pre id="ascii-art">
+        🚢 Preparing your cruise... 🏝️
+    </pre>
+
+    <script>
+        const targetDate = new Date("Sept 29, 2025 00:00:00").getTime(); 
+        const countdownElement = document.getElementById("countdown");
+        const asciiElement = document.getElementById("ascii-art");
+
+        const asciiShip = `
+               ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+                    \\     |    |    /
+                     \\____|____|___/
+                  __|_____________|___
+                 |      CRUISE        |
+                 |  SHIP DEPARTURE    |
+        ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+        `;
+
+        const asciiIsland = `
+               ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+                          ||  ||  
+                         |||  |||
+                        ||||| ||||
+                ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+               |       ISLAND      |
+               |   DESTINATION 🏝️  |
+               ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+        `;
+
+        const interval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance > 0) {
+                asciiElement.innerHTML = asciiShip;
+            } else {
+                clearInterval(interval);
+                countdownElement.innerHTML = "Welcome to the island! 🎉";
+                asciiElement.innerHTML = asciiIsland;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

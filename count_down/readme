@@ -1,0 +1,36 @@
+Hosted on local nginx server
+
+https://ubuntu.com/tutorials/install-and-configure-nginx#2-installing-nginx
+
+
+service nginx restart
+
+
+Now display html....
+
+
+Deployment
+Reload Pages only
+1. Copy html (*)
+   sudo cp ~/mfanning_personal/count_down/*.html /var/www/tutorial/
+2. Syntax Check
+3. Reload nginx -s reload
+
+Reload config (new page?)
+1. 
+Copy tutorial config
+    sudo cp ~/mfanning_personal/count_down/nginx/tutorial /etc/nginx/sites-enabled/tutorial
+2. Copy html (*)
+3.  
+Syntax Check
+ nginx -t -c ~/mfanning_personal/count_down/nginx/tutorial
+
+3. Reload?
+sudo nginx -s reload
+sudo systemctl restart nginx (HARD)
+
+Setup
+
+1. Create website dir /var/www/<site>
+2. Create Nginx config
+3. 
