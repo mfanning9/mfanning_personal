@@ -1,6 +1,6 @@
 Putting notes down for new machine setup
 
-git config --global user.email "m.fanning2264@gmail.com"                                                                                                       
+git config --global user.email "mfanning@users.noreply.github.com"                                                                                                       
 git config --global user.name "Matthew Fanning"     
 
 **Thinking it would be cool to maintain aliases in code to make the transition process easier between devices. 
