@@ -1,0 +1,20 @@
+WSL install - Described steps did not work, this is what worked for me
+    dpkg --print-architecture
+    wget https://releases.hashicorp.com/terraform/1.12.2/terraform_1.12.2_linux_amd64.zip
+    sudo apt-get install unzip
+    ls
+    unzip terraform_1.12.2_linux_amd64.zip
+    sudo mv terraform /usr/local/bin/
+
+https://docs.localstack.cloud/aws/integrations/infrastructure-as-code/terraform/
+
+curl --output localstack-cli-4.6.0-linux-amd64-onefile.tar.gz \
+    --location https://github.com/localstack/localstack-cli/releases/download/v4.6.0/localstack-cli-4.6.0-linux-amd64-onefile.tar.gz
+ 
+sudo tar xvzf localstack-cli-4.6.0-linux-amd64-onefile.tar.gz -C /usr/local/bin
+
+**Shared library Errror pip version error so specified 3.8.1
+
+ python3 -m pip install --upgrade localstack==3.7.1  # Still error
+
+ Digging into https://github.com/FlareSolverr/FlareSolverr/issues/1341 realized issue is due to older ubuntu version so going to blow awayyh and restart. 
