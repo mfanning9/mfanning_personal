@@ -103,5 +103,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval $(ssh-agent)
-ssh-add ~/.ssh/desktop1
+ssh-add ~/.ssh/wsl
 echo "Hello Neo, this is zshrc"
