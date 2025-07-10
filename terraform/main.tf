@@ -53,10 +53,10 @@ resource "aws_s3_bucket" "test-bucket" {
   }
 }
 
-
+/* tearing down resource for test, was able to ping pulbic ip of instance
 resource "aws_instance" "ec2_testing" {
   ami           = "ami-12345678"
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
 
   tags = { # Checkov testing
     AccessKey = "AKIAIOSFODNN7EXAMPLE"
@@ -65,3 +65,4 @@ resource "aws_instance" "ec2_testing" {
 
   }
 }
+*/

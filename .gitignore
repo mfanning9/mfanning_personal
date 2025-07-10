@@ -1,3 +1,11 @@
 # Exclude providers from source
 **/.terraform/*
+# Exclude statefile from source
+**/terraform/terraform.tfstate
+
+# Pulumi
+.pulumi/
+*.bak
+Pulumi.*.yaml.backup
+Pulumi.*.json
 

@@ -1,0 +1,6 @@
+export PATH=$PATH:/home/wsl/.pulumi/bin
+export PULUMI_CONFIG_PASSPHRASE=lsdevtest
+export PULUMI_BACKEND_URL=file://`pwd`/pulumi/.backend
+
+
+pulumi new aws-python --dir ./pulumi-start-aws 

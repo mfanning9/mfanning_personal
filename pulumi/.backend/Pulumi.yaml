@@ -1,0 +1,10 @@
+name: aws-python
+description: Initial pulumi testing using localstack
+runtime:
+  name: python
+  options:
+    toolchain: pip
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-python
