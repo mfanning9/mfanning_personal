@@ -1,0 +1,14 @@
+metadata:
+  name: "Hardcoded AWS credentials in provider block"
+  id: "CKV_CUSTOM_001"
+  category: "secrets"
+  description: "Ensure AWS access_key and secret_key are not hardcoded in provider blocks"
+
+definition:
+  cond_type: "attribute"
+  resource_types:
+    - "*aws*"
+  block_type: "module"
+  attribute: "*"
+  operator: "regex_match"
+  value: ".*(AKIA|ASIA)[A-Z0-9]{16}.*|.*[a-zA-Z0-9/+=]{40}.*"

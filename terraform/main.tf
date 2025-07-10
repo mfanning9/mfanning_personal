@@ -1,7 +1,7 @@
 provider "aws" {
-
-  access_key = "test_access_key"
-  secret_key = "test_secret_key"
+  # Test keys for checkov testing checkov -d . --external-checks-dir ./checkov_custom_checks
+  access_key = "AKIAIOSFODNN7EXAMPLE"
+  secret_key = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
   region     = "us-east-1"
 
   # only required for non virtual hosted-style endpoint use case.
@@ -46,4 +46,22 @@ output "is_localstack" {
 
 resource "aws_s3_bucket" "test-bucket" {
   bucket = "my-bucket"
+    tags = { # checkov testing
+    AccessKey = "AKIA1234567890EXAMPLE"
+    OwnerEmail = "john.connor@gmail.com"
+
+  }
+}
+
+
+resource "aws_instance" "ec2_testing" {
+  ami           = "ami-12345678"
+  instance_type = "t2.micro"
+
+  tags = { # Checkov testing
+    AccessKey = "AKIAIOSFODNN7EXAMPLE"
+    SecretKey = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+    OwnerEmail = "john.connor@gmail.com"
+
+  }
 }

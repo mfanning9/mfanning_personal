@@ -1,0 +1,10 @@
+checkov -d . --external-checks-dir ./checkov --check CKV_CUSTOM_001
+
+
+
+ checkov -d . \
+  --external-checks-dir ./checkov \ 
+  --check CKV_CUSTOM_001 \
+  --output json
+
+  ***Getting no output for check...need fresh eyes
